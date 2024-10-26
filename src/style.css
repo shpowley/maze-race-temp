@@ -1,0 +1,195 @@
+* {
+  /* PREVENT TEXT SELECTION */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: ivory;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('bebas-neue-v9-latin-regular.woff');
+}
+
+#interface {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* DE-ACTIVATE MOUSE EVENTS (HTML TEXT CAN'T BE SELECTED, RIGHT-CLICK OPTIONS, ETC.) */
+  pointer-events: none;
+
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* GAME TIMER */
+.time {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: 48px;
+  background: #00000033;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* RESTART "BUTTON" */
+.restart {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: 80px;
+  background: #00000033;
+  padding-top: 10px;
+  text-align: center;
+
+  /* RE-ACTIVATE MOUSE EVENTS ON THIS ELEMENT (OVERRIDING THE PARENT) */
+  pointer-events: auto;
+  cursor: pointer;
+
+  /* NEEDS TO BE HIGHER INDEX THAN #touch-controls-container FOR JUMP */
+  z-index: 10;
+}
+
+/* KEYBOARD CONTROLS */
+.controls {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+}
+
+.controls .raw {
+  display: flex;
+  justify-content: center;
+}
+
+.controls .key {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  border: 2px solid #ffffff;
+  background: #ffffff44;
+}
+
+.controls .key.large {
+  width: 144px;
+}
+
+/* ACTIVE KEY - MAKES ICON STAND OUT */
+.controls .key.active {
+  background: #ffffff99;
+}
+
+.animate-scale {
+  transition: scale 150ms;
+}
+
+.animate-scale:active {
+  scale: 1.4;
+}
+
+/* QUICK SETTINGS */
+#quick-settings {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+
+#quick-settings > div {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  padding: 14px;
+  display: flex;
+  pointer-events: auto;
+}
+
+#xr_mode {
+  left: 0;
+}
+
+#fullscreen {
+  right: 0;
+}
+
+/* TOUCH CONTROLS */
+#touch-controls-container {
+  height: 85%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+  align-items: center;
+  z-index: 0;
+}
+
+#touch-joystick {
+  height: fit-content;
+  position: absolute;
+  bottom: 70px;
+}
+
+#touch-joystick button {
+  box-shadow: #2d234266 0 2px 4px, #2d23424d 0 7px 13px -3px, #3a3a3a8c 0 -3px 5px 2px inset;
+}
+
+@media screen and (orientation: landscape) {
+  .time {
+    top: 20%;
+  }
+
+  #touch-joystick {
+    bottom: 60px;
+    left: 60px;
+  }
+}
+
+/* HEADSET AR / VR BUTTONS */
+#div_buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  position: absolute;
+  z-index: 10000;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#div_buttons button {
+  background: black;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bold;
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}

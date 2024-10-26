@@ -1,0 +1,32 @@
+{
+  "name": "threejs-journey-game-webxr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "list": "npm list --depth=0",
+    "outdated": "npm outdated --depth=0",
+    "update": "npm update",
+    "build": "vite build",
+    "uninstall": "rm -rf node_modules && rm -rf dist && rm package-lock.json"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.9",
+    "vite-plugin-restart": "^0.4.1"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.114.6",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/rapier": "^1.5.0",
+    "@react-three/xr": "^6.2.15",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-device-detect": "^2.2.3",
+    "react-joystick-component": "^6.2.1",
+    "three": "^0.169.0",
+    "zustand": "^5.0.0"
+  }
+}
